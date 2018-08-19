@@ -74,29 +74,28 @@ So the same ZPL with variables would be something like:
 
 config vars:
 
-  labelWidth (default: 4 inches)
-  labelHeight (default: 6 inches)
-  printDensity (default: 8 dpmm -> 203dpi)
-  labelPadding (default: 50 dots)
-  borderWidth: (default: 3 dots)
-  titleFontSize (default: calculated as half row height, in dots)
-  cellFontSize (default: calculated as half row height, in dots)
-  titleRowHeight (default: calculated as equal to cell height)
+- labelWidth (default: 4 inches)
+- labelHeight (default: 6 inches)
+- printDensity (default: 8 dpmm -> 203dpi)
+- labelPadding (default: 50 dots)
+- borderWidth: (default: 3 dots)
+- titleFontSize (default: calculated as half row height, in dots)
+- cellFontSize (default: calculated as half row height, in dots)
+- titleRowHeight (default: calculated as equal to cell height)
 
 inferred vars (from column titles/rows object array)
 
-  number of labels (1)
-  number of columns (2)
-  number of rows (1)
+- number of labels (1)
+- number of columns (2)
+- number of rows (1)
 
 calculated vars
 
-  rowHeight = (labelHeight - labelPadding\*2)/(1+numberRows)
-  tableWidth = labelWidth - 2\*labelPadding
+- rowHeight = (labelHeight - labelPadding\*2)/(1+numberRows)
+- tableWidth = labelWidth - 2\*labelPadding
+- title font size
+- title font weight
 
-  
-  title font size ()
-  title font weight
 
 ## Algorithm overview
 
@@ -120,6 +119,7 @@ calculated vars
 ## iterating on the lablary example
 
 ### 1 - move it to the top
+```
 ^XA
 
 ^FO50,50^GB700,250,3^FS
@@ -132,10 +132,10 @@ calculated vars
 ^FO485,115^FDCA^FS
 
 ^XZ
-
+```
 
 ### 2 - add another row
-
+```
 ^XA
 
 ^FO50,50^GB700,500,3^FS
@@ -150,10 +150,10 @@ calculated vars
 ^FO485,115^FDCA^FS
 
 ^XZ
-
+```
 
 ### 2 - add another column
-
+```
 ^XA
 
 ^FO50,50^GB700,500,3^FS
@@ -191,7 +191,7 @@ calculated vars
 
 
 ^XZ
-
+```
 
 
 
