@@ -46,7 +46,9 @@ zplify.generateTable({
   * entries must add up to 1
   * each entry must be greater than 0 and less than 1
 
-  ex: ```
+  ex: 
+
+  ```
     zplify.generateTable({
       rows: [
         ['id', 'name', 'qty', 'price'],
@@ -59,15 +61,25 @@ zplify.generateTable({
   ```
 
 
-* `labelWidth` - `Number` - specify the total width of the label, in inches
+* `labelWidth`
 
-  * default value is `4` inches
-  * width must be greater than 0
+  * type: `Number`
+  * unit: `inches`
+  * default: `4`
+  * descripton: _specify the total width of the label_
+  * notes:
 
-* `labelHeight` - `Number` - specify the total height of the label, in inches
+    * width must be greater than 0
 
-  * default value is `6` inches
-  * height must be greater than 0
+* `labelHeight`
+
+  * type: `Number`
+  * unit: `inches`
+  * default: `6`
+  * description: _specify the total height of the label, in inches_
+  * notes:
+
+    * height must be greater than 0
 
 * `printDensity` - `Number` - specify the dot resolution of the print, in DPI (dots per inch)
 
