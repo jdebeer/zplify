@@ -20,7 +20,14 @@ In your module:
 
 ## Usage
 
-### Create a basic table with custom column widths:
+The main method to be used is `generateTable`, which takes an object with 2 properties:
+1. `rows` - a _matrix_ (array of arrays), in which each entry corresponds to a table row
+2. `config` - an object containing properties for modifying the default formatting
+
+It is assumed that the first item in the `rows` array will an array of column titles,
+which receive slightly different styling than the rest of the rows.
+
+### Example:
 
 ```
 zplify.generateTable({
@@ -140,7 +147,7 @@ zplify.generateTable({
 
 ### Testing
 
-To see how the table you generated looks, you can use [Labelary](http://labelary.com/viewer.html)
+To see how the table you generated looks, you can use [Labelary](http://labelary.com/viewer.html).
 
 ## A bit about the logic
 
