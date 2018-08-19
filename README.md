@@ -20,7 +20,7 @@ In your module:
 
 ## Usage
 
-### Create a table:
+### Create a basic table with custom column widths:
 
 ```
 zplify.generateTable({
@@ -37,10 +37,11 @@ zplify.generateTable({
 ```
 
 
-## Config parameters
+### Config parameters
 
-* `columnRatios` - specifiy custom widths for the table columns
+* `columnRatios` - `Array` - specifiy custom widths for the table columns
 
+  * default value is an empty array, which evaluates to evenly spaced columns
   * must contain an equal number of items as the `columns` array
   * entries must add up to 1
   * each entry must be greater than 0 and less than 1
@@ -52,11 +53,54 @@ zplify.generateTable({
         ['1', 'Delicious Dog Food', '2', '42']
       ],
       config: {
-        columnRatios: [.1, .7, .1, .1]
+        columnRatios: [.1, .7, .1, .1] // same number of values as the first row
       }
     });
   ```
 
+
+* `labelWidth` - `Number` - specify the total width of the label, in inches
+
+  * default value is `4` inches
+  * width must be greater than 0
+
+* `labelHeight` - `Number` - specify the total height of the label, in inches
+
+  * default value is `6` inches
+  * height must be greater than 0
+
+* `printDensity` - `Number` - specify the dot resolution of the print, in DPI (dots per inch)
+
+  * default value is `203` (8 dpmm)
+
+* `labelPadding` - `Number` - specify the amount of space you'd like around the table, in dots
+
+  * default value is `50` dots
+
+* `borderWidth` - `Number` - specify how thick youd like the lines on the table to be
+
+  * default value is `3` dots
+
+* `fontSize` - `Number` - specify how big you'd like the font to be, in dots
+
+  * default value is `30` dots
+
+* `maxRowHeight` - `Number` - specify the maximum height you'd like a row to be, in dots
+
+  * by default, the maximum row height is twice the `fontSize` (so, `60` dots; _see above_)
+
+* `rowHeight` - `Number` - specify the height that you'd like each row to be, in dots
+
+  * by default, this is equal to the `maxRowHeight` (so, `60` dots; _see above_)
+
+* `cellPadding` - `Number` - specify the amount of space you'd like to the left of each cell value
+
+  * default value is `20` dots
+  * this does not apply to cells that have been horizontally centered
+
+### Testing
+
+To see how the table you generated looks, you can use [Labelary](http://labelary.com/viewer.html)
 
 ## A bit about the logic
 
