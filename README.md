@@ -119,7 +119,7 @@ zplify.generateTable({
 
   * type: `Number`
   * unit: `dots`
-  * default: _twice the `fontSize` (so, `60` dots; see above)
+  * default: _twice the `fontSize` (so, `60` dots; see above)_
   * description: _specify the maximum height you'd like a row to be_
 
 * `rowHeight`
