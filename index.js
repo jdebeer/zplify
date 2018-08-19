@@ -1,14 +1,15 @@
-
 const zplify = (function() {
 
-  const getArraySum = arrayOfNums => arrayOfNums.reduce((sum, proportion) => {
-    if (!isNaN(proportion) && proportion > 0 && proportion <= 1) {
-      return sum+proportion;
-    }
-    return 0;
-  }, 0);
+  function getArraySum(arrayOfNums) {
+    return arrayOfNums.reduce((sum, proportion) => {
+      if (!isNaN(proportion) && proportion > 0 && proportion <= 1) {
+        return sum+proportion;
+      }
+      return 0;
+    }, 0);
+  }
 
-  const getColumnWidths = (columnRatios, columns, tableWidth) => {
+  function getColumnWidths(columnRatios, columns, tableWidth) {
 
     const columnRatiosSum = getArraySum(columnRatios);
 
@@ -19,7 +20,7 @@ const zplify = (function() {
     return columns.map(col => Math.floor(tableWidth/columns.length));
   };
 
-  const createBorderBox = (labelPadding, tableHeight, tableWidth, borderWidth) => {
+  function createBorderBox (labelPadding, tableHeight, tableWidth, borderWidth) {
     return '^FO'+labelPadding
            +','+labelPadding
            +'^GB'+tableWidth
@@ -28,7 +29,13 @@ const zplify = (function() {
            +'^FS\n';
   };
 
-  const createVerticalSeparators = (columns, columnWidths, labelPadding, tableHeight, borderWidth) => {
+  function createVerticalSeparators(
+    columns,
+    columnWidths,
+    labelPadding,
+    tableHeight,
+    borderWidth
+  ) {
     let runningSum = 0;
     let separators = '';
     columns.forEach((column, index) => {
@@ -43,7 +50,13 @@ const zplify = (function() {
     return separators;
   };
 
-  const createHorizontalSeparators = (rows, rowHeight, labelPadding, tableWidth, borderWidth) => {
+  function createHorizontalSeparators(
+    rows,
+    rowHeight,
+    labelPadding,
+    tableWidth,
+    borderWidth
+  ) {
     let runningSum = 0;
     let separators = '';
     rows.forEach((row, index) => {
@@ -59,7 +72,15 @@ const zplify = (function() {
     return separators;
   };
 
-  const createAllCellContent = (fontSize, labelPadding, rowHeight, columns, rows, cellPadding, columnWidths) => {
+  function createAllCellContent(
+    fontSize,
+    labelPadding,
+    rowHeight,
+    columns,
+    rows,
+    cellPadding,
+    columnWidths
+  ) {
     const cells = [];
     cells.push('^CF0,'+fontSize+','+fontSize);
     let runningYSum = labelPadding;
@@ -93,7 +114,7 @@ const zplify = (function() {
     return cells.join('\n') + '\n';
   };
 
-  const generateTable = ({ rows = [], config = {} }) => {
+  function generateTable({ rows = [], config = {} }) {
     const columns = rows[0]; // 
 
     const {
@@ -102,7 +123,7 @@ const zplify = (function() {
       printDensity = 203, // dots per inch (dpi)
       labelPadding = 50, // dots
       borderWidth = 3, // dots
-      columnRatios = [], // array of decimal ratios that must add up to 1 - uniform by default
+      columnRatios = [], // array of decimal ratios that must add up to 1
       fontSize = 30, // dots
       maxRowHeight = 2*fontSize, // dots
       rowHeight = maxRowHeight, // dots

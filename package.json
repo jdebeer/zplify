@@ -4,8 +4,22 @@
   "description": "Generate a table in ZPL format based on a simple set of inputs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "basic-example": "node ./examples/generate-table"
   },
   "author": "André-Jacques de Beer",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jdebeer/zplify.git"
+  },
+  "keywords": [
+    "zebra",
+    "zpl",
+    "zebra programming language",
+    "table",
+    "generator",
+    "table generator",
+    "labelary"
+  ]
 }
