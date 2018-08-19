@@ -5,7 +5,7 @@ essentially a very large table of keys and values.
 
 I did a bunch of googling and couldn't come up with anything particularly convenient.
 
-I even thought to download the driver for a printer in zebra and print a google doc
+I even thought to download the driver for a printer in zebra and print a google sheet
 to that printer, but that started taking too long and feeling out of the way.
 
 So, eventually, I just used the example in labelary. The 4th section of the example
@@ -85,7 +85,6 @@ config vars:
 
 inferred vars (from column titles/rows object array)
 
-- number of labels (1)
 - number of columns (2)
 - number of rows (1)
 
@@ -116,7 +115,7 @@ calculated vars
 
 
 
-## iterating on the lablary example
+## iterating on the labelary example
 
 ### 1 - move it to the top
 ```

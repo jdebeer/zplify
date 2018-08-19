@@ -22,24 +22,45 @@ In your module:
 
 ### Create a table:
 
-#### Create table with default formatting:
 ```
-const rows = ['Vitamin A', 'Vitamin B'];
-const columns = ['']
-zplify.generateTable();
+zplify.generateTable({
+  rows: [
+    ['col1', 'col2'],
+    ['row1col1', 'row1col2']
+  ],
+  config: {
+    columnRatios: [.3, .7]
+  }
+});
+
+// returns a table with 2 rows and 2 columns, where row contains the column names
 ```
 
-#### Create table with custom formatting:
-```
 
-```
+## Config parameters
 
-## Custom table configuration
+* `columnRatios` - specifiy custom widths for the table columns
+
+  * must contain an equal number of items as the `columns` array
+  * entries must add up to 1
+  * each entry must be greater than 0 and less than 1
+
+  ex: ```
+    zplify.generateTable({
+      rows: [
+        ['id', 'name', 'qty', 'price'],
+        ['1', 'Delicious Dog Food', '2', '42']
+      ],
+      config: {
+        columnRatios: [.1, .7, .1, .1]
+      }
+    });
+  ```
 
 
 ## A bit about the logic
 
-ZPL II is not backwards compatable with ZPL I [1], which is to say that an interpreter expecting ZPL II code will not return the correct results given an input in the ZPL I format, necessarily. As such, I've elected to use the more recent version, ZPL II.
+ZPL II is not backwards compatable with ZPL I [1], which is to say that an interpreter expecting ZPL II code will not necessarily return the correct results given an input in the ZPL I format. As such, I've elected to use the more recent version, ZPL II.
 
 I may choose to add more features in following versions. If you'd like to request a feature, please reach out to zplify@ajdebeer.com. Here are some I'm thinking might be useful:
 
