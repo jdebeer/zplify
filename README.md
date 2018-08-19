@@ -39,14 +39,18 @@ zplify.generateTable({
 
 ### Config parameters
 
-* `columnRatios` - `Array` - specifiy custom widths for the table columns
+* `columnRatios`
 
-  * default value is an empty array, which evaluates to evenly spaced columns
-  * must contain an equal number of items as the `columns` array
-  * entries must add up to 1
-  * each entry must be greater than 0 and less than 1
+  * type: `Array`
+  * default: `[]` _(evaluates to evenly spaced columns)_
+  * description: _specifiy custom widths for the table columns_
+  * notes:
 
-  ex: 
+    * must contain an equal number of items as the `columns` array
+    * entries must add up to 1
+    * each entry must be greater than 0 and less than 1
+
+  _example_: 
 
   ```
     zplify.generateTable({
@@ -69,46 +73,70 @@ zplify.generateTable({
   * descripton: _specify the total width of the label_
   * notes:
 
-    * width must be greater than 0
+    * _width must be greater than 0_
 
 * `labelHeight`
 
   * type: `Number`
   * unit: `inches`
   * default: `6`
-  * description: _specify the total height of the label, in inches_
+  * description: _specify the total height of the label_
   * notes:
 
-    * height must be greater than 0
+    * _height must be greater than 0_
 
-* `printDensity` - `Number` - specify the dot resolution of the print, in DPI (dots per inch)
+* `printDensity`
 
-  * default value is `203` (8 dpmm)
+  * type: `Number`
+  * unit: `DPI` _(dots per inch)_
+  * default: `203` _(8 dpmm)_
+  * description: _specify the dot resolution of the print_
 
-* `labelPadding` - `Number` - specify the amount of space you'd like around the table, in dots
+* `labelPadding`
 
-  * default value is `50` dots
+  * type: `Number`
+  * unit: `dots`
+  * default: `50`
+  * description: _specify the amount of space you'd like around the table_
 
-* `borderWidth` - `Number` - specify how thick youd like the lines on the table to be
+* `borderWidth`
+  
+  * type: `Number`
+  * unit: `dots`
+  * default: `3`
+  * description: _specify how thick youd like the lines on the table to be_
 
-  * default value is `3` dots
 
-* `fontSize` - `Number` - specify how big you'd like the font to be, in dots
+* `fontSize`
 
-  * default value is `30` dots
+  * type: `Number`
+  * unit: `dots`
+  * default: `30`
+  * description: _specify how big you'd like the font to be_
 
-* `maxRowHeight` - `Number` - specify the maximum height you'd like a row to be, in dots
 
-  * by default, the maximum row height is twice the `fontSize` (so, `60` dots; _see above_)
+* `maxRowHeight`
 
-* `rowHeight` - `Number` - specify the height that you'd like each row to be, in dots
+  * type: `Number`
+  * unit: `dots`
+  * default: _twice the `fontSize` (so, `60` dots; see above)
+  * description: _specify the maximum height you'd like a row to be_
 
-  * by default, this is equal to the `maxRowHeight` (so, `60` dots; _see above_)
+* `rowHeight`
 
-* `cellPadding` - `Number` - specify the amount of space you'd like to the left of each cell value
+  * type: `Number`
+  * unit: `dots`
+  * default: _equal to the `maxRowHeight` (so, `60` dots; see above)_
+  * description: _specify the height that you'd like each row to be_
 
-  * default value is `20` dots
-  * this does not apply to cells that have been horizontally centered
+* `cellPadding`
+
+  * type: `Number`
+  * unit: `dots`
+  * default: `20`
+  * description: _specify the amount of space you'd like to the left of each cell value_
+  * notes:
+    * _this does not apply to cells that have been horizontally centered_
 
 ### Testing
 
